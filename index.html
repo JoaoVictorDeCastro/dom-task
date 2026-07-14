@@ -15,15 +15,36 @@
 </head>
 <body>
     <header>
-        <section>
+        <div>
             <a href="index.html">Lista de Compras</a>
             <div id="contElem">
                 <p>0 itens</p>
             </div>
-        </section>
+        </div>
     </header>
 
     <main>
+
+        <dialog id="addItem">
+            <div>
+                <p>Adicionar item</p>
+                <button id="closeAddItem1">x</button>
+            </div>
+            <div>
+                <form>
+                    <label for="itemName">NOME DO ITEM</label>
+                    <input type="text" id="itemName" name="itemName" required placeholder="Ex: Leite integral">
+
+                    <label for="qtd">QUANTIDADE (OPCIONAL)</label>
+                    <input type="number" id="qtd" name="qtd" required placeholder="Ex: 2 unidades, 500g...">
+                </form>
+            </div>
+            <div>
+                <button id="closeAddItem2">Cancelar</button>
+                <button>Adicionar</button>
+            </div>
+        </dialog>
+
         <section>
             <div id="texts">
                 <img src="assets/cart.png" alt="Ícone de carrinho de compras">
@@ -32,10 +53,12 @@
             </div>
 
             <div id="buttons">
-                <button>+ Adicionar item</button>
-                <button><img src="assets/edit.png" alt="Ícone de editar lista">Editar lista</button>
+                <button id="add">+ Adicionar item</button>
+                <button id="edit"><img src="assets/edit.png" alt="Ícone de editar lista">Editar lista</button>
+
             </div>
         </section>
     </main>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -11,6 +11,10 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* ---------- Header ---------- */
 
 header{
@@ -18,19 +22,19 @@ header{
   height: 104px;
   background-color: var(--base-blue);
   display: flex;
+  justify-content: center;
 }
 
-header section{
+header div{
   width: 80vw;
-  height: 100%;
-  box-shadow: 0 4px 6px -2px rgba(255, 255, 255, 0.1); 
+  height: 100%; 
   position: relative;
   z-index: 5;
   display: flex;
   align-items: center;
 }
 
-header section a {
+header div a {
   width: 50%;
   text-decoration: none;
   color: var(--base-white);
@@ -96,4 +100,45 @@ main section{
   color: var(--base-white);
   font-size: 14px;
   font-weight: 400;
+}
+
+#buttons {
+  color: var(--base-white);
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+#add {
+  width: 20vw;
+  height: 54px;
+  background-color: var(--base-yellow);
+  color: var(--base-blue);
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+}
+
+#edit {
+  width: 15vw;
+  height: 54px;
+  background-color: var(--base-green);
+  color: var(--base-white);
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit img{
+  width: 28px;
+  height: 28px;
 }
