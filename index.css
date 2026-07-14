@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: 'preconnect', Arial;
+  box-sizing: border-box; 
 }
 
 img, picture, video, canvas, svg {
@@ -62,17 +63,323 @@ header div a {
   font-family: 'preconnect', Arial;
 }
 
+/* ---------- Itens ----------- */
+
+#itens {
+  width: var(--content-width);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.itemLista {
+  width: 100%;
+  height: 54px;
+  background-color: var(--base-green);
+  border-radius: 54px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px;
+}
+
+.itemDot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  background-color: var(--base-yellow);
+}
+
+.itemNome {
+  color: var(--base-white);
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.itemQtd {
+  background-color: var(--base-blue-light);
+  color: var(--base-white);
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* ---------- Modal - Adicionar Item ---------- */
+
+#addItem{
+  width: 35vw;
+  height: 45vh;
+  margin: auto;
+  position: fixed; 
+  inset: 0; 
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  background-color: var(--base-white);
+}
+
+#addItem::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#addItem div{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#tituloModal {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#tituloModal p{
+  color: black;
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#closeAddItem1{
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: var(--base-blue-light);
+  color: var(--base-white);
+  border: none; 
+  box-shadow: 0px 4px 12px -5px rgba(0, 0, 0, 0.15); 
+}
+
+#closeAddItem1:hover {
+  background-color: var(--base-red);
+}
+
+#form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#form label{
+  color: rgba(0, 0, 0, 0.50);
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 12px;
+  padding-bottom: 8px;
+}
+
+#form input{
+  width: 100%;
+  height: 40px;
+  color: rgba(0, 0, 0, 0.50);
+  background-color: var(--base-white);
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.50);
+  padding-left: 10px;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.30);
+  font-size: 13px;
+}
+
+#addItemButtons {
+  justify-content: space-between;
+}
+
+#addItemButton {
+  background-color: var(--base-blue);
+  width: 60%;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0px 4px 12px -5px rgba(0, 0, 0, 0.15); 
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--base-white);
+  transition: background-color 0.2s ease;
+}
+
+#addItemButton:hover{
+  background-color: var(--base-green);
+}
+
+#closeAddItem2  {
+  background-color: rgba(0, 0, 0, 0.15);
+  width: 35%;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0px 4px 12px -5px rgba(0, 0, 0, 0.15); 
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.60);
+  transition: background-color 0.2s ease;
+}
+
+/* ---------- Modal - Editar Lista ---------- */
+
+#editItem {
+  width: 35vw;
+  max-height: 70vh;
+  margin: auto;
+  position: fixed;
+  inset: 0;
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  background-color: var(--base-white);
+}
+
+#editItem[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+#editItem::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#tituloModalEdit {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#tituloModalEdit p {
+  color: black;
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#closeEditItem {
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+#closeEditItem:hover {
+  background-color: var(--base-red);
+  color: var(--base-white);
+}
+
+#editItensList {
+  list-style: none;
+  overflow-y: auto;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.editItemLinha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.editItemInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.editItemDot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  background-color: var(--base-blue-light);
+}
+
+.editItemNome {
+  color: black;
+  font-family: 'preconnect', Arial;
+  font-size: 15px;
+}
+
+.editItemAcoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.editItemQtd {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.5);
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 32px;
+}
+
+.editItemDelete {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--base-red);
+  color: var(--base-white);
+  border: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#concluirEdit {
+  width: 100%;
+  height: 48px;
+  background-color: var(--base-blue);
+  color: var(--base-white);
+  font-family: 'preconnect', Arial;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  border-radius: 12px;
+}
+
+#concluirEdit:hover {
+  background-color: var(--base-blue-light);
+}
+
 /* ---------- Main ---------- */
 
-main section{
+main section {
   background-color: var(--base-blue);
   width: 100vw;
-  height: 90vh;
+  min-height: 90vh; 
   box-shadow: 0px 4px 12px -5px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 #texts{
@@ -104,13 +411,14 @@ main section{
 
 #buttons {
   color: var(--base-white);
-  gap: 20px;
+  width: var(--content-width); 
+  gap: 2vw;
   display: flex;
   flex-direction: row;
 }
 
 #add {
-  width: 20vw;
+  width: 65%; 
   height: 54px;
   background-color: var(--base-yellow);
   color: var(--base-blue);
@@ -123,7 +431,7 @@ main section{
 }
 
 #edit {
-  width: 15vw;
+  width: 32%;
   height: 54px;
   background-color: var(--base-green);
   color: var(--base-white);
@@ -136,9 +444,128 @@ main section{
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 
 #edit img{
   width: 28px;
   height: 28px;
+}
+
+/* ---------- Responsividade ---------- */
+
+@media (max-width: 768px) {
+
+  /* Header */
+  header div {
+    width: 90vw;
+  }
+
+  header div a {
+    font-size: 20px;
+  }
+
+  #contElem p {
+    width: auto;
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  /* Main / Section */
+  main section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  #texts img {
+    width: 48px;
+    height: 48px;
+  }
+
+  #texts h1 {
+    font-size: 22px;
+    text-align: center;
+    padding: 16px 20px;
+  }
+
+  #texts p {
+    font-size: 13px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  /* Itens */
+  #itens {
+    width: 90vw;
+    margin-bottom: 24px;
+  }
+
+  .itemLista {
+    height: 48px;
+    padding: 0 16px;
+    gap: 8px;
+  }
+
+  .itemNome {
+    font-size: 15px;
+  }
+
+  .itemQtd {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  /* Buttons */
+  #buttons {
+    width: 90vw;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #add,
+  #edit {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  /* Modal - Adicionar Item */
+  #addItem {
+    width: 90vw;
+    height: auto;
+    max-height: 80vh;
+    padding: 20px;
+  }
+
+  #addItemButtons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #addItemButton,
+  #closeAddItem2 {
+    width: 100% !important;
+  }
+
+  /* Modal - Editar Lista */
+  #editItem {
+    width: 90vw;
+    max-height: 80vh;
+    padding: 20px;
+  }
+
+  .editItemNome {
+    font-size: 14px;
+  }
+
+  .editItemQtd {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .editItemDelete {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
 }

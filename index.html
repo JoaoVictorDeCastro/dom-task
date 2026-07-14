@@ -18,39 +18,49 @@
         <div>
             <a href="index.html">Lista de Compras</a>
             <div id="contElem">
-                <p>0 itens</p>
+                <p id="contElemText">0 itens</p>
             </div>
         </div>
     </header>
 
     <main>
-
         <dialog id="addItem">
-            <div>
+            <div id="tituloModal">
                 <p>Adicionar item</p>
                 <button id="closeAddItem1">x</button>
             </div>
             <div>
-                <form>
+                <form id="form">
                     <label for="itemName">NOME DO ITEM</label>
                     <input type="text" id="itemName" name="itemName" required placeholder="Ex: Leite integral">
 
                     <label for="qtd">QUANTIDADE (OPCIONAL)</label>
-                    <input type="number" id="qtd" name="qtd" required placeholder="Ex: 2 unidades, 500g...">
+                    <input type="text" id="qtd" name="qtd" placeholder="Ex: 2 unidades, 500g...">
                 </form>
             </div>
-            <div>
-                <button id="closeAddItem2">Cancelar</button>
-                <button>Adicionar</button>
+            <div id="addItemButtons">
+                <button id="closeAddItem2" type="button">Cancelar</button>
+                <button id="addItemButton"  type="submit" form="form">Adicionar</button>
             </div>
+        </dialog>
+
+        <dialog id="editItem">
+            <div id="tituloModalEdit">
+                <p>Editar lista</p>
+                <button id="closeEditItem">x</button>
+            </div>
+            <ul id="editItensList"></ul>
+            <button id="concluirEdit">Concluir</button>
         </dialog>
 
         <section>
             <div id="texts">
-                <img src="assets/cart.png" alt="Ícone de carrinho de compras">
-                <h1>Nenhum item na lista ainda</h1>
-                <p>Toque em "+ Adicionar item" para começar</p>
+                <img class="noItens" src="assets/cart.png" alt="Ícone de carrinho de compras">
+                <h1 class="noItens">Nenhum item na lista ainda</h1>
+                <p class="noItens">Toque em "+ Adicionar item" para começar</p>
             </div>
+            
+            <ul id="itens"></ul>
 
             <div id="buttons">
                 <button id="add">+ Adicionar item</button>
