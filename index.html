@@ -6,14 +6,36 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="index.css">
 
-    <link rel="outfit" href="https://fonts.googleapis.com">
-    <link rel="outfit" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="">
+    <link rel="icon" type="image/png" href="assets/cart.png">
     <title>Lista de Compras</title>
 </head>
 <body>
-    
+    <header>
+        <section>
+            <a href="index.html">Lista de Compras</a>
+            <div id="contElem">
+                <p>0 itens</p>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section>
+            <div id="texts">
+                <img src="assets/cart.png" alt="Ícone de carrinho de compras">
+                <h1>Nenhum item na lista ainda</h1>
+                <p>Toque em "+ Adicionar item" para começar</p>
+            </div>
+
+            <div id="buttons">
+                <button>+ Adicionar item</button>
+                <button><img src="assets/edit.png" alt="Ícone de editar lista">Editar lista</button>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

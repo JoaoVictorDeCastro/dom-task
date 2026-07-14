@@ -1,7 +1,8 @@
 :root {
     --base-white: #EEF0F2;
-    --base-yellow: #EEC643;
-    --base-green: #00BC1F;
-    --base-blue: #0D21A1;
-    --base-red: #FF0A0A;
+    --base-yellow: #FFD426;
+    --base-green: #64AD36;
+    --base-blue: #1741C4;
+    --base-blue-light: #3A5DCD;
+    --base-red: #E03336;
 }
